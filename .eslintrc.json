@@ -1,0 +1,83 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "plugins": ["import"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "rules": {
+    // Enforce consistent use of type annotations
+    "@typescript-eslint/explicit-module-boundary-types": "warn",
+
+    // Disallow the use of `any` type for better type safety
+    "@typescript-eslint/no-explicit-any": "warn",
+
+    // Disallow unused variables, including those prefixed with an underscore
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+
+    // Enforce using `async` for Promises to handle asynchronous code
+    "@typescript-eslint/promise-function-async": "warn",
+
+    // Prefer `const` whenever possible
+    "prefer-const": "warn",
+
+    // Enforce consistent spacing in object curly braces
+    "object-curly-spacing": ["warn", "always"],
+
+    // Consistent import ordering
+    "import/order": [
+      "warn",
+      {
+        "groups": [["builtin", "external", "internal"]],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ],
+
+    // Disallow explicit return types for certain function expressions for readability
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+    ],
+
+    // Disallow unhandled promises to improve error handling
+    "@typescript-eslint/no-floating-promises": "error",
+
+    // Enforce consistent line breaks after blocks
+    "lines-between-class-members": ["warn", "always"],
+
+    // Enforce naming conventions for more readable and consistent code
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      }
+    ],
+
+    // Require all promises to be handled correctly
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      { "checksVoidReturn": false }
+    ]
+  }
+}
