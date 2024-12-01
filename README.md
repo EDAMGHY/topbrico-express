@@ -1,4 +1,4 @@
-# Project Manager Starter
+# TopBrico Express
 
 This repository is a **Node.js** and **TypeScript** starter template for building backend applications with **Express.js**, **Mongoose**, and a modern development workflow including **Husky**, **Nodemon**, and **ESLint**.
 
@@ -30,7 +30,7 @@ This repository is a **Node.js** and **TypeScript** starter template for buildin
 
 ```bash
 git clone git@github.com:EDAMGHY/express-starter.git
-cd express-starter
+cd topbrico-express
 ```
 
 ### 2. Install Dependencies
